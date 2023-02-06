@@ -181,4 +181,34 @@
         <material>Gazebo/Orange</material>
     </gazebo>
 
+     <transmission name="Left_side_trans">
+      <type>transmission_interface/SimpleTransmission</type>      
+      <joint name="front_left_wheel_joint">
+
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="back_left_wheel_joint">
+        
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    
+
+    <transmission name="Right_side_trans">
+      <type>transmission_interface/SimpleTransmission</type>      
+      <joint name="front_right_wheel_joint">
+        
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="back_right_wheel_joint">
+       
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+
+    
 </robot>
