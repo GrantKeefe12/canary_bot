@@ -29,7 +29,7 @@ def generate_launch_description():
     )
 
     
-
+    # returns robot description as a string
 
     robot_description = Command(['ros2 param get --hide-type /robot_state_publisher robot_description'])
 
