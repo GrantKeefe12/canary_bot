@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <!-- <ros2_control name = "GazeboSystem" type = "system">
+
+
+    <ros2_control name = "GazeboSystem" type = "system">
         <hardware>
             <plugin>gazebo_ros2_control/GazeboSystem</plugin>
         </hardware>
         
-        <joint name = "back_left_wheel_joint">
+        <joint name = "left_drive_joint">
             <command_interface name="velocity">
                 <param name = "min">-10</param>
                 <param name = "max">10</param>
@@ -17,7 +19,7 @@
 
         </joint>
 
-        <joint name = "back_right_wheel_joint">
+        <joint name = "right_drive_joint">
             <command_interface name="velocity">
                 <param name = "min">-10</param>
                 <param name = "max">10</param>
@@ -28,11 +30,11 @@
 
         </joint>
 
-    </ros2_control> -->
+    </ros2_control>
 
     <!-- CHANGE NUMBERS AS PROJECT DEVELOPS -->
 
-    <ros2_control name = "RealRobot" type = "system">
+    <!-- <ros2_control name = "RealRobot" type = "system">
         <hardware>
             <plugin>diffdrive_arduino/DiffDriveArduino</plugin>
             <param name = "left_wheel_name">back_left_wheel_joint</param>
@@ -64,9 +66,9 @@
             <state_interface name ="velocity"/>
             <state_interface name ="position"/>
 
-        </joint>
+        </joint> 
 
-    </ros2_control>
+    </ros2_control> -->
 
 
     <gazebo>
