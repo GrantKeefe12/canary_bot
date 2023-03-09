@@ -15,7 +15,7 @@
                 <param name="timeout">1000</param>
                 <param name="enc_counts_per_rev">3000</param>
             </hardware>
-            <joint name="left_wheel_joint">
+            <joint name="left_drive_joint">
                 <command_interface name="velocity">
                     <param name="min">-10</param>
                     <param name="max">10</param>
@@ -23,7 +23,7 @@
                 <state_interface name="velocity"/>
                 <state_interface name="position"/>
             </joint>
-            <joint name="right_wheel_joint">
+            <joint name="right_drive_joint">
                 <command_interface name="velocity">
                     <param name="min">-10</param>
                     <param name="max">10</param>
