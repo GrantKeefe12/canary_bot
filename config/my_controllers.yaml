@@ -14,7 +14,7 @@ diff_cont:
 
     publish_rate: 50.0
 
-    base_frame_id: base_link
+    base_frame_id: base_footprint
 
     left_wheel_names: ['left_drive_joint']
     right_wheel_names: ['right_drive_joint']
@@ -25,6 +25,8 @@ diff_cont:
     wheel_radius: 0.06
 
     use_stamped_vel: false
+
+    velocity_rolling_window_size: 10
 
     
     
