@@ -17,22 +17,33 @@ def generate_launch_description():
             parameters=[joy_params, {'use_sim_time': use_sim_time}],
          )
     
-    # teleop_node = Node(
-    #         package='teleop_twist_joy',
-    #         executable='teleop_node',
-    #         name='teleop_node',
-    #         parameters=[joy_params, {'use_sim_time': use_sim_time}],
-    #         remappings=[('/cmd_vel','/cmd_vel_joy')]
-    #      )
-
-
     teleop_node = Node(
             package='teleop_twist_joy',
             executable='teleop_node',
             name='teleop_node',
             parameters=[joy_params, {'use_sim_time': use_sim_time}],
-            remappings=[('/cmd_vel','/diff_cont/cmd_vel_unstamped')]
+            remappings=[('/cmd_vel','/cmd_vel_joy')]
          )
+    
+    twist_mux_params = os.path.join(get_package_share_directory('canary_bot'),'config','twist_mux.yaml')
+
+    twist_mux = Node(
+            package="twist_mux",
+            executable="twist_mux",
+            parameters=[twist_mux_params],
+            remappings=[('/cmd_vel_out','/diff_cont/cmd_vel_unstamped')]
+        )
+
+    
+
+
+    # teleop_node = Node(
+    #         package='teleop_twist_joy',
+    #         executable='teleop_node',
+    #         name='teleop_node',
+    #         parameters=[joy_params, {'use_sim_time': use_sim_time}],
+    #         remappings=[('/cmd_vel','/diff_cont/cmd_vel_unstamped')]
+    #      )
     
 
 
@@ -51,6 +62,7 @@ def generate_launch_description():
             default_value='false',
             description='Use sim time if true'),
         joy_node,
-        teleop_node
+        teleop_node,
+        twist_mux
         #twist_stamper       
     ])
