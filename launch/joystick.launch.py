@@ -16,6 +16,14 @@ def generate_launch_description():
             executable='joy_node',
             parameters=[joy_params, {'use_sim_time': use_sim_time}],
          )
+    
+    # teleop_node = Node(
+    #         package='teleop_twist_joy',
+    #         executable='teleop_node',
+    #         name='teleop_node',
+    #         parameters=[joy_params, {'use_sim_time': use_sim_time}],
+    #         remappings=[('/cmd_vel','/cmd_vel_joy')]
+    #      )
 
 
     teleop_node = Node(
@@ -23,7 +31,7 @@ def generate_launch_description():
             executable='teleop_node',
             name='teleop_node',
             parameters=[joy_params, {'use_sim_time': use_sim_time}],
-            remappings=[('/cmd_vel','/cmd_vel_joy')]
+            remappings=[('/cmd_vel','/diff_cont/cmd_vel_unstamped')]
          )
     
 
